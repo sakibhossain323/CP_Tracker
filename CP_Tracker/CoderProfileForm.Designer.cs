@@ -32,7 +32,7 @@
             this.labelcfid = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
             this.labelProblemsSolved = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelAvrgrate = new System.Windows.Forms.Label();
             this.buttonShowGraph = new System.Windows.Forms.Button();
             this.buttonLeaderboard = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -83,16 +83,16 @@
             this.labelProblemsSolved.TabIndex = 20;
             this.labelProblemsSolved.Text = "Problems Solved This Week";
             // 
-            // label1
+            // labelAvrgrate
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(14, 178);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(463, 32);
-            this.label1.TabIndex = 24;
-            this.label1.Text = "Average Rating of Solved Problems";
+            this.labelAvrgrate.AutoSize = true;
+            this.labelAvrgrate.BackColor = System.Drawing.Color.Transparent;
+            this.labelAvrgrate.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAvrgrate.Location = new System.Drawing.Point(14, 178);
+            this.labelAvrgrate.Name = "labelAvrgrate";
+            this.labelAvrgrate.Size = new System.Drawing.Size(463, 32);
+            this.labelAvrgrate.TabIndex = 24;
+            this.labelAvrgrate.Text = "Average Rating of Solved Problems";
             // 
             // buttonShowGraph
             // 
@@ -127,7 +127,7 @@
             this.ClientSize = new System.Drawing.Size(854, 540);
             this.Controls.Add(this.buttonLeaderboard);
             this.Controls.Add(this.buttonShowGraph);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelAvrgrate);
             this.Controls.Add(this.buttonLogout);
             this.Controls.Add(this.labelProblemsSolved);
             this.Controls.Add(this.labelcfid);
@@ -145,7 +145,7 @@
         private System.Windows.Forms.Label labelcfid;
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label labelProblemsSolved;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelAvrgrate;
         private System.Windows.Forms.Button buttonShowGraph;
         private System.Windows.Forms.Button buttonLeaderboard;
     }

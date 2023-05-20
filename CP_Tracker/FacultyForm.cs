@@ -15,11 +15,15 @@ namespace CP_Tracker
         public FacultyForm()
         {
             InitializeComponent();
+
         }
 
         private void buttonFaculty_Click(object sender, EventArgs e)
         {
+            Faculty temp = new Faculty(CreateAccountForm.instance.username, CreateAccountForm.instance.password, textBoxFullName.Text, textboxDesignation.Text);
+            CP_Tracker.Faculty_List.Add(temp);
             this.Hide();
+            FacultyProfileForm.launch(CreateAccountForm.instance.username);
             FacultyProfileForm f2 = new FacultyProfileForm();
             f2.Show();
         }

@@ -30,7 +30,7 @@
         {
             this.buttonCoder = new System.Windows.Forms.Button();
             this.textboxFullName = new System.Windows.Forms.TextBox();
-            this.textboxDesignation = new System.Windows.Forms.TextBox();
+            this.textboxPhone = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -62,13 +62,13 @@
             this.textboxFullName.Size = new System.Drawing.Size(185, 34);
             this.textboxFullName.TabIndex = 13;
             // 
-            // textboxDesignation
+            // textboxPhone
             // 
-            this.textboxDesignation.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textboxDesignation.Location = new System.Drawing.Point(398, 79);
-            this.textboxDesignation.Name = "textboxDesignation";
-            this.textboxDesignation.Size = new System.Drawing.Size(185, 34);
-            this.textboxDesignation.TabIndex = 12;
+            this.textboxPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textboxPhone.Location = new System.Drawing.Point(398, 79);
+            this.textboxPhone.Name = "textboxPhone";
+            this.textboxPhone.Size = new System.Drawing.Size(185, 34);
+            this.textboxPhone.TabIndex = 12;
             // 
             // label1
             // 
@@ -178,7 +178,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.buttonCoder);
             this.Controls.Add(this.textboxFullName);
-            this.Controls.Add(this.textboxDesignation);
+            this.Controls.Add(this.textboxPhone);
             this.Controls.Add(this.label1);
             this.Name = "CoderForm";
             this.Text = "CoderForm";
@@ -191,7 +191,7 @@
 
         private System.Windows.Forms.Button buttonCoder;
         private System.Windows.Forms.TextBox textboxFullName;
-        private System.Windows.Forms.TextBox textboxDesignation;
+        private System.Windows.Forms.TextBox textboxPhone;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;

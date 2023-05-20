@@ -61,15 +61,16 @@
             // textboxPassword
             // 
             this.textboxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textboxPassword.Location = new System.Drawing.Point(383, 105);
+            this.textboxPassword.Location = new System.Drawing.Point(370, 149);
             this.textboxPassword.Name = "textboxPassword";
             this.textboxPassword.Size = new System.Drawing.Size(185, 34);
             this.textboxPassword.TabIndex = 6;
+            this.textboxPassword.TextChanged += new System.EventHandler(this.textboxPassword_TextChanged);
             // 
             // textboxUsername
             // 
             this.textboxUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textboxUsername.Location = new System.Drawing.Point(383, 153);
+            this.textboxUsername.Location = new System.Drawing.Point(370, 109);
             this.textboxUsername.Name = "textboxUsername";
             this.textboxUsername.Size = new System.Drawing.Size(185, 34);
             this.textboxUsername.TabIndex = 5;
