@@ -63,7 +63,17 @@ namespace CP_Tracker
                 string cf_id = row.Field<string>("cf_id");
                 int cf_rating = row.Field<int>("cf_rating");
 
-                Coder coder = new Coder(username, pass, name, phone, email, dept, cf_id, cf_rating);
+                string avg_rating_pblm = row.Field<string>("avg_rating_pblm");
+                string avg_wkly_cnt_pblm = row.Field<string>("avg_wkly_cnt_pblm");
+                string str_cf_rating = row.Field<string>("str_cf_rating");
+                int cur_pblm_avg_rate_week = row.Field<int>("cur_pblm_avg_rate_week");
+                int cur_pblm_cnt_week = row.Field<int>("cur_pblm_cnt_week");
+                string regular_skill = row.Field<string>("regular_skill");
+                string advanced_skill = row.Field<string>("advanced_skill");
+
+                Coder coder = new Coder(username, pass, name, phone, email, dept, cf_id, cf_rating,
+                                        avg_rating_pblm, avg_wkly_cnt_pblm, str_cf_rating, cur_pblm_avg_rate_week,
+                                        cur_pblm_cnt_week, regular_skill, advanced_skill);
                 Coder_List.Add(coder);
             }
         }
