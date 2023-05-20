@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace CP_Tracker
 {
-    internal class CustomException
+    public class CustomException : Exception
     {
+        public CustomException(string message) : base(message) { }
+
     }
 }

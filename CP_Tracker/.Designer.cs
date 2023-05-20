@@ -37,7 +37,7 @@ namespace CP_Tracker
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "LoginForm";
-            this.Text = "Form1";
+            this.Text = "Login Form";
             this.ResumeLayout(false);
 
         }
