@@ -47,10 +47,64 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin.cs" />
+    <Compile Include="AdminLoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminLoginForm.Designer.cs">
+      <DependentUpon>AdminLoginForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Coder.cs" />
+    <Compile Include="CoderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CoderForm.Designer.cs">
+      <DependentUpon>CoderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CoderListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CoderListForm.Designer.cs">
+      <DependentUpon>CoderListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CoderProfileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CoderProfileForm.Designer.cs">
+      <DependentUpon>CoderProfileForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CP_Tracker.cs" />
+    <Compile Include="CreateAccountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateAccountForm.Designer.cs">
+      <DependentUpon>CreateAccountForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomException.cs" />
     <Compile Include="Faculty.cs" />
+    <Compile Include="FacultyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FacultyForm.Designer.cs">
+      <DependentUpon>FacultyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FacultyProfileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FacultyProfileForm.Designer.cs">
+      <DependentUpon>FacultyProfileForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GraphForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GraphForm.Designer.cs">
+      <DependentUpon>GraphForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LeaderboardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LeaderboardForm.Designer.cs">
+      <DependentUpon>LeaderboardForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +116,30 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility.cs" />
+    <EmbeddedResource Include="AdminLoginForm.resx">
+      <DependentUpon>AdminLoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CoderForm.resx">
+      <DependentUpon>CoderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CoderListForm.resx">
+      <DependentUpon>CoderListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CoderProfileForm.resx">
+      <DependentUpon>CoderProfileForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateAccountForm.resx">
+      <DependentUpon>CreateAccountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FacultyForm.resx">
+      <DependentUpon>FacultyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FacultyProfileForm.resx">
+      <DependentUpon>FacultyProfileForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LeaderboardForm.resx">
+      <DependentUpon>LeaderboardForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
