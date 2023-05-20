@@ -69,22 +69,40 @@ namespace CP_Tracker
         public int curr_prblm_cnt_week = 0;
 
         public int level = 1;
-        public Dictionary<string, bool> skills;
+        public string regular_skills = "";
+        public string advanced_skills = "";
 
-        public Coder()
+        public Coder(string _username, string _passwd, string _name, string _phone_no, string _email, string _department, string _cf_id, int cf_rating)
         {
-            this.skills = new Dictionary<string, bool>();
-            foreach (string s in CP_Tracker.regular_topic_List)
-            {
-                skills[s] = false;
-            }
 
             this.problem_List = new List<Problem>();
 
             this.assigned_faculty = CP_Tracker.Get_faculty();
+
+            this.Levelup();
+
+            this.Username = _username;
+            this.Passwd = _passwd;
+            this.name = _name;
+            this.phone_no = _phone_no;
+            this.email = _email;
+            this.department = _department;
+            this.cf_id = _cf_id;
+            this.cf_rating = cf_rating;
         }
 
-        public void Solved_Problem_Update(string problem_name, int problem_rating)
+    public Coder(string _username, string _passwd, string _name, string _phone_no, string _email, string _department, string _cf_id, int _cf_rating, string _string_avrg_rating_prblm, string _string_weekly_count_prblm, string _string_cf_rating, int _curr_prblm_avrg_rate_week, int _curr_prblm_cnt_week, string _regular_skill, string _advanced_skill) :this(_username, _passwd, _name, _phone_no, _email, _department, _cf_id, _cf_rating)
+    {
+            this.string_cf_rating = _string_cf_rating;
+            this.string_weekly_count_prblm = _string_weekly_count_prblm;
+            this.string_avrg_rating_prblm = _string_avrg_rating_prblm;
+            this.curr_prblm_avrg_rate_week = _curr_prblm_avrg_rate_week;
+            this.curr_prblm_cnt_week = _curr_prblm_cnt_week;
+            this.regular_skills = _regular_skill;
+            this.advanced_skills = _advanced_skill;
+    }
+
+    public void Solved_Problem_Update(string problem_name, int problem_rating)
         {
             Problem temp = new Problem(problem_name, problem_rating);
             problem_List.Add(temp);
@@ -95,17 +113,43 @@ namespace CP_Tracker
             if (this.cf_rating >= 1400)
             {
                 this.level = 2;
-                foreach (string s in CP_Tracker.advanced_topic_List)
-                {
-                    skills[s] = false;
-                }
             }
+            else this.level = 1;
         }
         public void Upadate_skill(string skill_name)
         {
-            if (skills.ContainsKey(skill_name))
+            int indx = CP_Tracker.regular_topic_List.IndexOf(skill_name);
+            if (indx < CP_Tracker.regular_topic_List.Count)
             {
-                skills[skill_name] = true;
+                if (indx < this.regular_skills.Length)
+                {
+                    this.regular_skills = this.regular_skills.Substring(0, indx) + "1" + this.regular_skills.Substring(indx + 1);
+                    return;
+                }
+                else
+                {
+                    while (indx != this.regular_skills.Length - 2) this.regular_skills += "0";
+                    this.regular_skills += "1";
+                    return;
+                }
+            }
+            if(this.level == 2)
+            {
+                if (indx < CP_Tracker.advanced_topic_List.Count)
+                {
+                    indx = CP_Tracker.advanced_topic_List.IndexOf(skill_name);
+                    if (indx < this.advanced_skills.Length)
+                    {
+                        this.advanced_skills = this.advanced_skills.Substring(0, indx) + "1" + this.advanced_skills.Substring(indx + 1);
+                        return;
+                    }
+                    else
+                    {
+                        while (indx != this.advanced_skills.Length - 2) this.advanced_skills += "0";
+                        this.advanced_skills += "1";
+                        return;
+                    }
+                }
             }
         }
 

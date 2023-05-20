@@ -6,8 +6,18 @@ using System.Threading.Tasks;
 
 namespace CP_Tracker
 {
-    public static class CP_Tracker
+    public sealed class CP_Tracker
     {
+        private CP_Tracker() { }
+        private static CP_Tracker instance;
+        public static CP_Tracker Instance()
+        {
+            if (instance == null)
+            {
+                instance = new CP_Tracker();
+            }
+            return instance;
+        }
         public static List<Coder> Coder_List = new List<Coder>(); //data reqired**************
         public static List<Faculty> Faculty_List = new List<Faculty>();//data reqired**************
 
@@ -19,6 +29,53 @@ namespace CP_Tracker
         static int count = 0;//data reqired**************
         static private DateTime LastDate = new DateTime(2023, 5, 13, 0, 0, 0);//data reqired**************
 
+
+
+
+
+        // following functions update the database
+        public void Update_Coder_List(List<Coder> Coder_List)
+        {
+
+        }
+        public void Update_Faculty_List(List<Faculty> Faculty_List)
+        {
+
+        }
+
+        public void Update_regular_topic_List(List<string> regular_topic_List)
+        {
+
+        }
+
+        public void Update_advanced_topic_List(List<string> advanced_topic_List)
+        {
+
+        }
+
+        public void Update_Admin_Info(string Admin_Username, string Admin_Passwd)
+        {
+
+        }
+
+        public void Update_count(int count)
+        {
+
+        }
+
+        public void Update_Last_Date(DateTime last_date)
+        {
+
+        }
+
+
+
+
+
+
+
+        
+        
         public static void Tick()
         {
             TimeSpan dif = DateTime.Now - LastDate;
@@ -32,6 +89,8 @@ namespace CP_Tracker
                     c.string_avrg_rating_prblm += c.Progress_avrg_rate_week(c.curr_prblm_avrg_rate_week);
                 }
                 LastDate = DateTime.Now;
+                var CP_ins = Instance();
+                CP_ins.Update_Last_Date(LastDate);
             }
         }
 
@@ -102,7 +161,25 @@ namespace CP_Tracker
         public static string Get_faculty()
         {
             if (count > Faculty_List.Count - 1) count = 0;
-            return Faculty_List[count++].Name;
+            count++;
+            var CP_ins = Instance();
+            CP_ins.Update_count(count);
+            return Faculty_List[count-1].Name;
         }
+
+        public static void sort_rating()
+        {
+            Coder_List.Sort((p1, p2) => p1.cf_rating.CompareTo(p2.cf_rating));
+        }
+        public static void sort_prblm_cnt_week()
+        {
+            Coder_List.Sort((p1, p2) => p1.curr_prblm_cnt_week.CompareTo(p2.curr_prblm_cnt_week));
+        }
+        public static void sort_prblm_avrg_rate_week()
+        {
+            Coder_List.Sort((p1, p2) => p1.curr_prblm_avrg_rate_week.CompareTo(p2.curr_prblm_avrg_rate_week));
+        }
+
+        
     }
 }
