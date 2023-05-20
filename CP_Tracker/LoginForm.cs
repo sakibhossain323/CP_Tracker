@@ -73,5 +73,12 @@ namespace CP_Tracker
         {
             Application.Exit();
         }
+
+        private void linkAdminLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            AdminLoginForm form = new AdminLoginForm();
+            form.Show();
+        }
     }
 }

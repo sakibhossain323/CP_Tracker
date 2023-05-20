@@ -46,6 +46,7 @@
             this.buttonEnter.TabIndex = 16;
             this.buttonEnter.Text = "Enter";
             this.buttonEnter.UseVisualStyleBackColor = true;
+            this.buttonEnter.Click += new System.EventHandler(this.buttonEnter_Click);
             // 
             // label3
             // 
