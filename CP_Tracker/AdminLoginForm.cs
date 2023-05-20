@@ -16,5 +16,16 @@ namespace CP_Tracker
         {
             InitializeComponent();
         }
+
+        private void buttonEnter_Click(object sender, EventArgs e)
+        {
+            if (textboxUsername.Text == CP_Tracker.AdminUsername && textboxPassword.Text == CP_Tracker.AdminPasswd)
+            {
+                this.Hide();
+                AdminProfileForm f2 = new AdminProfileForm();
+                f2.Show();
+            }
+            else MessageBox.Show("Incorrect Username or Password!");
+        }
     }
 }

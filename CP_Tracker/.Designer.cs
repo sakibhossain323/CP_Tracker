@@ -52,6 +52,7 @@ namespace CP_Tracker
             this.linkAdminLogin.TabIndex = 17;
             this.linkAdminLogin.TabStop = true;
             this.linkAdminLogin.Text = "Admin Login";
+            this.linkAdminLogin.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkAdminLogin_LinkClicked);
             // 
             // buttonEnter
             // 

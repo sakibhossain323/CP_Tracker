@@ -27,8 +27,8 @@ namespace CP_Tracker
         public static List<string> regular_topic_List = new List<string>();//data reqired**************
         public static List<string> advanced_topic_List = new List<string>();//data reqired**************
 
-        public static string AdminUsername;//data reqired**************
-        public static string AdminPasswd;//data reqired**************
+        public static string AdminUsername = "Admin";//data reqired**************
+        public static string AdminPasswd = "Admin00";//data reqired**************
         static int count = 0;//data reqired**************
         static private DateTime LastDate = new DateTime(2023, 5, 13, 0, 0, 0);//data reqired**************
 
