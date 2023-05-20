@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace CP_Tracker
 {
@@ -29,8 +32,80 @@ namespace CP_Tracker
         static int count = 0;//data reqired**************
         static private DateTime LastDate = new DateTime(2023, 5, 13, 0, 0, 0);//data reqired**************
 
+        
+        // following functions for loading from the database
+        public DataSet LoadDataSet(string command)
+        {
+            DataSet ds = new DataSet();
+            string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(cs))
+            {
+                SqlDataAdapter da = new SqlDataAdapter(command, con);
+                da.Fill(ds);
+            }
+            return ds;
+        }
+        
+        public void Load_Coder_List(List<Coder> Coder_List)
+        {
+            Load_Faculty_List(CP_Tracker.Faculty_List);
 
+            DataSet ds = LoadDataSet("SELECT * FROM Coder");
 
+            foreach (DataRow row in ds.Tables[0].Rows)
+            {
+                string username = row.Field<string>("username");
+                string pass = row.Field<string>("passwrd");
+                string name = row.Field<string>("fullname");
+                string phone = row.Field<string>("phone");
+                string email = row.Field<string>("email");
+                string dept = row.Field<string>("department"); ;
+                string cf_id = row.Field<string>("cf_id");
+                int cf_rating = row.Field<int>("cf_rating");
+
+                Coder coder = new Coder(username, pass, name, phone, email, dept, cf_id, cf_rating);
+                Coder_List.Add(coder);
+            }
+        }
+        public void Load_Faculty_List(List<Faculty> Faculty_List)
+        {
+            DataSet ds = LoadDataSet("SELECT * FROM Faculty");
+
+            foreach (DataRow row in ds.Tables[0].Rows)
+            {
+                string username = row.Field<string>("username");
+                string pass = row.Field<string>("passwrd");
+                string name = row.Field<string>("fullname");
+                string desg = row.Field<string>("designation");
+
+                Faculty faculty = new Faculty(username, pass, name, desg);
+                Faculty_List.Add(faculty);
+            }
+        }
+
+        public void Load_regular_topic_List(List<string> regular_topic_List)
+        {
+
+        }
+
+        public void Load_advanced_topic_List(List<string> advanced_topic_List)
+        {
+
+        }
+        public void Load_Admin_Info(string Admin_Username, string Admin_Passwd)
+        {
+
+        }
+
+        public void Load_count(int count)
+        {
+
+        }
+
+        public void Load_Last_Date(DateTime last_date)
+        {
+
+        }
 
 
         // following functions update the database
