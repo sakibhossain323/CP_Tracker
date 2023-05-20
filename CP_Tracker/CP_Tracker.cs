@@ -32,7 +32,7 @@ namespace CP_Tracker
         static int count = 0;//data reqired**************
         static private DateTime LastDate = new DateTime(2023, 5, 13, 0, 0, 0);//data reqired**************
 
-        
+
         // following functions for loading from the database
         public DataSet LoadDataSet(string command)
         {
@@ -45,7 +45,7 @@ namespace CP_Tracker
             }
             return ds;
         }
-        
+
         public void Load_Coder_List(List<Coder> Coder_List)
         {
             Load_Faculty_List(CP_Tracker.Faculty_List);
@@ -159,8 +159,8 @@ namespace CP_Tracker
 
 
 
-        
-        
+
+
         public static void Tick()
         {
             TimeSpan dif = DateTime.Now - LastDate;
@@ -249,7 +249,7 @@ namespace CP_Tracker
             count++;
             var CP_ins = Instance();
             CP_ins.Update_count(count);
-            return Faculty_List[count-1].Name;
+            return Faculty_List[count - 1].Name;
         }
 
         public static void sort_rating()
@@ -265,6 +265,6 @@ namespace CP_Tracker
             Coder_List.Sort((p1, p2) => p1.curr_prblm_avrg_rate_week.CompareTo(p2.curr_prblm_avrg_rate_week));
         }
 
-        
+
     }
 }

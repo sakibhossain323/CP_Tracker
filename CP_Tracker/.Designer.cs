@@ -38,6 +38,7 @@ namespace CP_Tracker
             this.label1 = new System.Windows.Forms.Label();
             this.textboxPassword = new System.Windows.Forms.TextBox();
             this.textboxUsername = new System.Windows.Forms.TextBox();
+            this.linkExit = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // linkAdminLogin
@@ -45,7 +46,7 @@ namespace CP_Tracker
             this.linkAdminLogin.AutoSize = true;
             this.linkAdminLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkAdminLogin.LinkColor = System.Drawing.Color.Maroon;
-            this.linkAdminLogin.Location = new System.Drawing.Point(612, 23);
+            this.linkAdminLogin.Location = new System.Drawing.Point(560, 23);
             this.linkAdminLogin.Name = "linkAdminLogin";
             this.linkAdminLogin.Size = new System.Drawing.Size(121, 25);
             this.linkAdminLogin.TabIndex = 17;
@@ -132,11 +133,26 @@ namespace CP_Tracker
             this.textboxUsername.Size = new System.Drawing.Size(185, 34);
             this.textboxUsername.TabIndex = 9;
             // 
+            // linkExit
+            // 
+            this.linkExit.AutoSize = true;
+            this.linkExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkExit.LinkColor = System.Drawing.Color.Red;
+            this.linkExit.Location = new System.Drawing.Point(705, 23);
+            this.linkExit.Name = "linkExit";
+            this.linkExit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.linkExit.Size = new System.Drawing.Size(44, 25);
+            this.linkExit.TabIndex = 18;
+            this.linkExit.TabStop = true;
+            this.linkExit.Text = "Exit";
+            this.linkExit.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkExit_LinkClicked);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.linkExit);
             this.Controls.Add(this.linkAdminLogin);
             this.Controls.Add(this.buttonEnter);
             this.Controls.Add(this.label4);
@@ -165,6 +181,7 @@ namespace CP_Tracker
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textboxPassword;
         private System.Windows.Forms.TextBox textboxUsername;
+        private System.Windows.Forms.LinkLabel linkExit;
     }
 }
 

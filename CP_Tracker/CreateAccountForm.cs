@@ -12,23 +12,55 @@ namespace CP_Tracker
 {
     public partial class CreateAccountForm : Form
     {
+        public static CreateAccountForm instance;
+        public string username;
+        public string password;
         public CreateAccountForm()
         {
             InitializeComponent();
+            instance = this;
+            
         }
 
         private void linkCoder_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.Hide();
-            CoderForm Form2 = new CoderForm();
-            Form2.Show();
+            try
+            {
+                if (CP_Tracker.VerifyUsername(textboxUsername.Text) && Utility.VerifyPass(textboxPassword.Text)) { 
+                    username = textboxUsername.Text;
+                    password = textboxPassword.Text;
+                    this.Hide();
+                    CoderForm Form2 = new CoderForm();
+                    Form2.Show();
+                }
+            }
+            catch(CustomException ex) {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void linkFaculty_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.Hide();
-            FacultyForm Form2 = new FacultyForm();
-            Form2.Show();
+            try
+            {
+                if (CP_Tracker.VerifyUsername(textboxUsername.Text) && Utility.VerifyPass(textboxPassword.Text))
+                {
+                    username = textboxUsername.Text;
+                    password = textboxPassword.Text;
+                    this.Hide();
+                    FacultyForm Form2 = new FacultyForm();
+                    Form2.Show();
+                }
+            }
+            catch (CustomException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void textboxPassword_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
