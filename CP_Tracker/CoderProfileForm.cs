@@ -75,6 +75,7 @@ namespace CP_Tracker
        
         private void buttonAddProblem_Click(object sender, EventArgs e)
         {
+
             ///////////////////////////////////////////////need to modify later
             foreach (var temp in CP_Tracker.Coder_List)
             {
@@ -85,6 +86,8 @@ namespace CP_Tracker
                     break;
                 }
             }
+            textBoxProblemName.Clear();
+            textboxProblemRating.Clear();
         }
 
         private void buttonShowSkill_Click(object sender, EventArgs e)
