@@ -142,7 +142,7 @@ namespace CP_Tracker
             {
                 string username = facutly.Username;
 
-                DataRow[] matchingRows = ds.Tables[0].Select("PrimaryKeyColumn = '" + username + "'");
+                DataRow[] matchingRows = ds.Tables[0].Select("username = '" + username + "'");
                 if (matchingRows.Length > 0)
                 {
                     DataRow matchedRow = matchingRows[0];
@@ -153,6 +153,7 @@ namespace CP_Tracker
                 else
                 {
                     DataRow newRow = ds.Tables[0].NewRow();
+                    newRow["username"] = facutly.Username;
                     newRow["passwrd"] = facutly.Passwd;
                     newRow["fullname"] = facutly.Name;
                     newRow["designation"] = facutly.Designation;
