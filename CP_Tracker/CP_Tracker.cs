@@ -24,8 +24,8 @@ namespace CP_Tracker
         public static List<Coder> Coder_List = new List<Coder>(); //data reqired**************
         public static List<Faculty> Faculty_List = new List<Faculty>();//data reqired**************
 
-        public static List<string> regular_topic_List = new List<string>();//data reqired**************
-        public static List<string> advanced_topic_List = new List<string>();//data reqired**************
+        public static List<string> regular_topic_List = new List<string>() { "Dfs", "Bfs", "Segment Tree" };//data reqired**************
+        public static List<string> advanced_topic_List = new List<string>() { "Dp", "Aho-Corasick"};//data reqired**************
 
         public static string AdminUsername = "Admin";//data reqired**************
         public static string AdminPasswd = "Admin00";//data reqired**************
