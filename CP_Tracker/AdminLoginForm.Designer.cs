@@ -34,6 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textboxPassword = new System.Windows.Forms.TextBox();
             this.textboxUsername = new System.Windows.Forms.TextBox();
+            this.linkExit = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // buttonEnter
@@ -97,11 +98,26 @@
             this.textboxUsername.Size = new System.Drawing.Size(185, 34);
             this.textboxUsername.TabIndex = 9;
             // 
+            // linkExit
+            // 
+            this.linkExit.AutoSize = true;
+            this.linkExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkExit.LinkColor = System.Drawing.Color.Red;
+            this.linkExit.Location = new System.Drawing.Point(729, 19);
+            this.linkExit.Name = "linkExit";
+            this.linkExit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.linkExit.Size = new System.Drawing.Size(44, 25);
+            this.linkExit.TabIndex = 19;
+            this.linkExit.TabStop = true;
+            this.linkExit.Text = "Exit";
+            this.linkExit.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkExit_LinkClicked);
+            // 
             // AdminLoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.linkExit);
             this.Controls.Add(this.buttonEnter);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -123,5 +139,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textboxPassword;
         private System.Windows.Forms.TextBox textboxUsername;
+        private System.Windows.Forms.LinkLabel linkExit;
     }
 }

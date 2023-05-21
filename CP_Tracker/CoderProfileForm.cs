@@ -50,5 +50,10 @@ namespace CP_Tracker
             LeaderboardForm form4 = new LeaderboardForm();
             form4.Show();
         }
+
+        private void CoderProfileForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

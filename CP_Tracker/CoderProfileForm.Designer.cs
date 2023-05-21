@@ -134,6 +134,7 @@
             this.Controls.Add(this.labelName);
             this.Name = "CoderProfileForm";
             this.Text = "CoderProfileForm";
+            this.Load += new System.EventHandler(this.CoderProfileForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

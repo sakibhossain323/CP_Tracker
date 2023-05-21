@@ -27,5 +27,10 @@ namespace CP_Tracker
             }
             else MessageBox.Show("Incorrect Username or Password!");
         }
+
+        private void linkExit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
