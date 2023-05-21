@@ -64,6 +64,8 @@ namespace CP_Tracker
                 if (temp.Username == Username)
                 {
                     temp.Upadate_skill(textBoxSkillName.Text);
+                    var CP_ins = CP_Tracker.Instance();
+                    CP_ins.Update_Coder_List(CP_Tracker.Coder_List);
                     flg = false;
                 }
             }
@@ -83,6 +85,8 @@ namespace CP_Tracker
                 {
                     temp.curr_prblm_cnt_week++;
                     labelProblemsSolved.Text = "Problems Solved This Week " + Convert.ToString(temp.curr_prblm_cnt_week);
+                    var CP_ins = CP_Tracker.Instance();
+                    CP_ins.Update_Coder_List(CP_Tracker.Coder_List);
                     break;
                 }
             }
@@ -134,10 +138,13 @@ namespace CP_Tracker
                 if (temp.Username == Username)
                 {
                     temp.Progress_cf_rating(Convert.ToInt32(textBoxUpdaterating.Text));
+                    labelName.Text = temp.name + "(Level " + Convert.ToString(temp.level) + ")";
                     labelcfid.Text = temp.cf_id + " (Rating: " + textBoxUpdaterating.Text + ")";
                     break;
                 }
             }
+            var CP_ins = CP_Tracker.Instance();
+            CP_ins.Update_Coder_List(CP_Tracker.Coder_List);
         }
     }
 }
