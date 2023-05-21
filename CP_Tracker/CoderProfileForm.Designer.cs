@@ -37,8 +37,8 @@
             this.buttonLeaderboard = new System.Windows.Forms.Button();
             this.buttonAddSkill = new System.Windows.Forms.Button();
             this.buttonAddProblem = new System.Windows.Forms.Button();
-            this.textboxRegulerskill = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textboxProblemRating = new System.Windows.Forms.TextBox();
+            this.textBoxProblemName = new System.Windows.Forms.TextBox();
             this.textBoxSkillName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -159,21 +159,21 @@
             this.buttonAddProblem.UseVisualStyleBackColor = false;
             this.buttonAddProblem.Click += new System.EventHandler(this.buttonAddProblem_Click);
             // 
-            // textboxRegulerskill
+            // textboxProblemRating
             // 
-            this.textboxRegulerskill.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textboxRegulerskill.Location = new System.Drawing.Point(244, 313);
-            this.textboxRegulerskill.Name = "textboxRegulerskill";
-            this.textboxRegulerskill.Size = new System.Drawing.Size(261, 38);
-            this.textboxRegulerskill.TabIndex = 30;
+            this.textboxProblemRating.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textboxProblemRating.Location = new System.Drawing.Point(244, 313);
+            this.textboxProblemRating.Name = "textboxProblemRating";
+            this.textboxProblemRating.Size = new System.Drawing.Size(261, 38);
+            this.textboxProblemRating.TabIndex = 30;
             // 
-            // textBox1
+            // textBoxProblemName
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(244, 269);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(261, 38);
-            this.textBox1.TabIndex = 31;
+            this.textBoxProblemName.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxProblemName.Location = new System.Drawing.Point(244, 269);
+            this.textBoxProblemName.Name = "textBoxProblemName";
+            this.textBoxProblemName.Size = new System.Drawing.Size(261, 38);
+            this.textBoxProblemName.TabIndex = 31;
             // 
             // textBoxSkillName
             // 
@@ -285,8 +285,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxSkillName);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.textboxRegulerskill);
+            this.Controls.Add(this.textBoxProblemName);
+            this.Controls.Add(this.textboxProblemRating);
             this.Controls.Add(this.buttonAddProblem);
             this.Controls.Add(this.buttonAddSkill);
             this.Controls.Add(this.buttonLeaderboard);
@@ -314,8 +314,8 @@
         private System.Windows.Forms.Button buttonLeaderboard;
         private System.Windows.Forms.Button buttonAddSkill;
         private System.Windows.Forms.Button buttonAddProblem;
-        private System.Windows.Forms.TextBox textboxRegulerskill;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textboxProblemRating;
+        private System.Windows.Forms.TextBox textBoxProblemName;
         private System.Windows.Forms.TextBox textBoxSkillName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

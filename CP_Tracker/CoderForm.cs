@@ -23,6 +23,8 @@ namespace CP_Tracker
         {
             Coder temp = new Coder(CreateAccountForm.instance.username, CreateAccountForm.instance.password, textboxFullName.Text, textboxPhone.Text, textboxEmail.Text, textboxDept.Text, textboxcfid.Text, Convert.ToInt32(textboxcfRating.Text));
             CP_Tracker.Coder_List.Add(temp);
+            var CP_ins = CP_Tracker.Instance();
+            CP_ins.Update_Coder_List(CP_Tracker.Coder_List);
             this.Hide();
             CoderProfileForm.Username = CreateAccountForm.instance.username;
             CoderProfileForm f2 = new CoderProfileForm();

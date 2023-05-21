@@ -58,12 +58,14 @@ namespace CP_Tracker
 
         private void buttonAddSkill_Click(object sender, EventArgs e)
         {
-            bool flg = true;
+             bool flg = true;
             foreach (var temp in CP_Tracker.Coder_List)
             {
                 if (temp.Username == Username)
                 {
                     temp.Upadate_skill(textBoxSkillName.Text);
+                    var CP_ins = CP_Tracker.Instance();
+                    CP_ins.Update_Coder_List(CP_Tracker.Coder_List);
                     flg = false;
                 }
             }
@@ -76,10 +78,25 @@ namespace CP_Tracker
         private void buttonAddProblem_Click(object sender, EventArgs e)
         {
 
+            ///////////////////////////////////////////////need to modify later
+            foreach (var temp in CP_Tracker.Coder_List)
+            {
+                if (temp.Username == Username)
+                {
+                    temp.curr_prblm_cnt_week++;
+                    labelProblemsSolved.Text = "Problems Solved This Week " + Convert.ToString(temp.curr_prblm_cnt_week);
+                    var CP_ins = CP_Tracker.Instance();
+                    CP_ins.Update_Coder_List(CP_Tracker.Coder_List);
+                    break;
+                }
+            }
+            textBoxProblemName.Clear();
+            textboxProblemRating.Clear();
         }
 
         private void buttonShowSkill_Click(object sender, EventArgs e)
         {
+            listBoxShowSkill.Items.Clear();
             listBoxShowSkill.Items.Add("Regular Skill List");
             foreach (var temp in CP_Tracker.Coder_List)
             {
@@ -98,7 +115,7 @@ namespace CP_Tracker
                         listBoxShowSkill.Items.Add("Advanced Skill List");
                         for (int i = 0; i < temp.advanced_skills.Count(); i++)
                         {
-                            if (temp.regular_skills[i] == '1')
+                            if (temp.advanced_skills[i] == '1')
                             {
                                 listBoxShowSkill.Items.Add(CP_Tracker.advanced_topic_List[i]);
                             }
@@ -121,10 +138,13 @@ namespace CP_Tracker
                 if (temp.Username == Username)
                 {
                     temp.Progress_cf_rating(Convert.ToInt32(textBoxUpdaterating.Text));
+                    labelName.Text = temp.name + "(Level " + Convert.ToString(temp.level) + ")";
                     labelcfid.Text = temp.cf_id + " (Rating: " + textBoxUpdaterating.Text + ")";
                     break;
                 }
             }
+            var CP_ins = CP_Tracker.Instance();
+            CP_ins.Update_Coder_List(CP_Tracker.Coder_List);
         }
     }
 }
