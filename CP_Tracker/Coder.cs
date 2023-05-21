@@ -72,6 +72,7 @@ namespace CP_Tracker
         public string regular_skills = "";
         public string advanced_skills = "";
 
+
         public Coder(string _username, string _passwd, string _name, string _phone_no, string _email, string _department, string _cf_id, int cf_rating)
         {
 

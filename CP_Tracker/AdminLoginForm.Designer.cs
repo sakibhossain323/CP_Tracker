@@ -35,6 +35,7 @@
             this.textboxPassword = new System.Windows.Forms.TextBox();
             this.textboxUsername = new System.Windows.Forms.TextBox();
             this.linkExit = new System.Windows.Forms.LinkLabel();
+            this.linkLoginPage = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // buttonEnter
@@ -112,11 +113,27 @@
             this.linkExit.Text = "Exit";
             this.linkExit.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkExit_LinkClicked);
             // 
+            // linkLoginPage
+            // 
+            this.linkLoginPage.ActiveLinkColor = System.Drawing.Color.Green;
+            this.linkLoginPage.AutoSize = true;
+            this.linkLoginPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLoginPage.LinkColor = System.Drawing.Color.ForestGreen;
+            this.linkLoginPage.Location = new System.Drawing.Point(551, 19);
+            this.linkLoginPage.Name = "linkLoginPage";
+            this.linkLoginPage.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.linkLoginPage.Size = new System.Drawing.Size(154, 25);
+            this.linkLoginPage.TabIndex = 20;
+            this.linkLoginPage.TabStop = true;
+            this.linkLoginPage.Text = "Go to login page";
+            this.linkLoginPage.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLoginPage_LinkClicked);
+            // 
             // AdminLoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.linkLoginPage);
             this.Controls.Add(this.linkExit);
             this.Controls.Add(this.buttonEnter);
             this.Controls.Add(this.label3);
@@ -140,5 +157,6 @@
         private System.Windows.Forms.TextBox textboxPassword;
         private System.Windows.Forms.TextBox textboxUsername;
         private System.Windows.Forms.LinkLabel linkExit;
+        private System.Windows.Forms.LinkLabel linkLoginPage;
     }
 }
