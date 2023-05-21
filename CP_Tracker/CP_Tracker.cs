@@ -119,13 +119,49 @@ namespace CP_Tracker
 
 
         // following functions update the database
+        public void Update_DataSet(DataSet ds, string cmd)
+        {
+            string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(cs))
+            {
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd, con);
+                SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
+                dataAdapter.Update(ds);
+            }
+        }
+
         public void Update_Coder_List(List<Coder> Coder_List)
         {
 
         }
         public void Update_Faculty_List(List<Faculty> Faculty_List)
         {
+            DataSet ds = LoadDataSet("SELECT * FROM Faculty");
+            
+            foreach(Faculty facutly in Faculty_List)
+            {
+                string username = facutly.Username;
 
+                DataRow[] matchingRows = ds.Tables[0].Select("PrimaryKeyColumn = '" + username + "'");
+                if (matchingRows.Length > 0)
+                {
+                    DataRow matchedRow = matchingRows[0];
+                    matchedRow["passwrd"] = facutly.Passwd;
+                    matchedRow["fullname"] = facutly.Name;
+                    matchedRow["designation"] = facutly.Designation;
+                }
+                else
+                {
+                    DataRow newRow = ds.Tables[0].NewRow();
+                    newRow["passwrd"] = facutly.Passwd;
+                    newRow["fullname"] = facutly.Name;
+                    newRow["designation"] = facutly.Designation;
+
+                    ds.Tables[0].Rows.Add(newRow);
+                }
+            }
+
+            Update_DataSet(ds, "SELECT * FROM Faculty");
         }
 
         public void Update_regular_topic_List(List<string> regular_topic_List)
