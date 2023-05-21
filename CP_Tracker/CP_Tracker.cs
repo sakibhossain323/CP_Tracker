@@ -132,7 +132,55 @@ namespace CP_Tracker
 
         public void Update_Coder_List(List<Coder> Coder_List)
         {
+            DataSet ds = LoadDataSet("SELECT * FROM Coder");
 
+            foreach (Coder coder in Coder_List)
+            {
+                string username = coder.Username;
+
+                DataRow[] matchingRows = ds.Tables[0].Select("username = '" + username + "'");
+                if (matchingRows.Length > 0)
+                {
+                    DataRow matchedRow = matchingRows[0];
+                    matchedRow["passwrd"] = coder.Passwd;
+                    matchedRow["fullname"] = coder.name;
+                    matchedRow["phone"] = coder.phone_no;
+                    matchedRow["email"] = coder.email;
+                    matchedRow["department"] = coder.department;
+                    matchedRow["cf_id"] = coder.cf_id;
+                    matchedRow["cf_rating"] = coder.cf_rating;
+                    matchedRow["avg_rating_pblm"] = coder.string_avrg_rating_prblm;
+                    matchedRow["avg_wkly_cnt_pblm"] = coder.string_weekly_count_prblm;
+                    matchedRow["str_cf_rating"] = coder.string_cf_rating;
+                    matchedRow["cur_pblm_avg_rate_week"] = coder.curr_prblm_avrg_rate_week;
+                    matchedRow["cur_pblm_cnt_week"] = coder.curr_prblm_cnt_week;
+                    matchedRow["regular_skill"] = coder.regular_skills;
+                    matchedRow["advanced_skill"] = coder.advanced_skills;
+                }
+                else
+                {
+                    DataRow newRow = ds.Tables[0].NewRow();
+                    newRow["username"] = coder.Username;
+                    newRow["passwrd"] = coder.Passwd;
+                    newRow["fullname"] = coder.name;
+                    newRow["phone"] = coder.phone_no;
+                    newRow["email"] = coder.email;
+                    newRow["department"] = coder.department;
+                    newRow["cf_id"] = coder.cf_id;
+                    newRow["cf_rating"] = coder.cf_rating;
+                    newRow["avg_rating_pblm"] = coder.string_avrg_rating_prblm;
+                    newRow["avg_wkly_cnt_pblm"] = coder.string_weekly_count_prblm;
+                    newRow["str_cf_rating"] = coder.string_cf_rating;
+                    newRow["cur_pblm_avg_rate_week"] = coder.curr_prblm_avrg_rate_week;
+                    newRow["cur_pblm_cnt_week"] = coder.curr_prblm_cnt_week;
+                    newRow["regular_skill"] = coder.regular_skills;
+                    newRow["advanced_skill"] = coder.advanced_skills;
+
+                    ds.Tables[0].Rows.Add(newRow);
+                }
+            }
+
+            Update_DataSet(ds, "SELECT * FROM Coder");
         }
         public void Update_Faculty_List(List<Faculty> Faculty_List)
         {
