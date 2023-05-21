@@ -32,5 +32,12 @@ namespace CP_Tracker
         {
             Application.Exit();
         }
+
+        private void linkLoginPage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+        }
     }
 }
